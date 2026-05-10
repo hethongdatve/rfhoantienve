@@ -26,8 +26,6 @@
         .reg-title { color: #1e40af; font-weight: 900; border-bottom: 2px solid #3b82f6; margin-bottom: 8px; font-size: 11px; text-transform: uppercase; }
         .air-item { font-size: 13px; color: #475569; cursor: pointer; line-height: 2.2; border-bottom: 1px solid #f1f5f9; }
         .footer-dark { background-color: #000033 !important; color: white !important; padding: 40px 20px; border-top: 4px solid #ffa500; }
-        
-        /* Trip Type Styles */
         .trip-type-label { cursor: pointer; font-weight: bold; font-size: 14px; display: flex; align-items: center; gap: 6px; color: #444; }
         .trip-type-label input { width: 18px; height: 18px; accent-color: #000080; }
     </style>
@@ -63,8 +61,8 @@
                     <span class="bg-blue-600 text-white text-[9px] px-2 py-1 rounded-full font-bold">Ghi nhận thông tin</span>
                 </div>
             </div>
-            <p class="text-gray-600 font-bold text-sm mb-6">Liên hệ trực tiếp nhân viên để hoàn tất đặt vé:</p>
-            <a href="tel:0328282828" class="bg-red-600 text-white font-bold py-4 px-10 rounded-full text-2xl shadow-2xl flex items-center gap-4 transition hover:bg-red-700"><i class="fa fa-phone-alt"></i> 0328.28.28.28</a>
+            <p class="text-gray-600 font-bold text-sm mb-6">Liên hệ trực tiếp Fanpage CSKH để hoàn tất đặt vé:</p>
+            <a href="#" class="bg-blue-600 text-white font-bold py-4 px-10 rounded-full text-xl shadow-2xl flex items-center gap-4 transition hover:bg-blue-700 uppercase"><i class="fab fa-facebook-messenger"></i> Liên hệ CSKH Fanpage</a>
             <button onclick="goBack()" class="mt-10 text-gray-400 underline uppercase font-bold text-[10px]">Quay lại trang chủ</button>
         </div>
     </div>
@@ -78,7 +76,7 @@
 
     <header class="bg-white p-3 md:p-4 container mx-auto flex flex-col md:flex-row justify-between items-center border-b-2 border-blue-900 gap-2">
         <a href="javascript:void(0)" onclick="showTab('home')" class="text-2xl md:text-4xl font-black text-red-600 italic uppercase">REFUNDVEMAYBAY247<span class="text-orange-500">.COM</span></a>
-        <div class="text-red-600 font-bold text-lg md:text-2xl flex items-center gap-2"><i class="fa fa-phone-square"></i> 0328282828</div>
+        <div class="text-blue-600 font-bold text-lg md:text-xl flex items-center gap-2 uppercase italic"><i class="fab fa-facebook-messenger"></i> Hỗ trợ Fanpage 24/7</div>
     </header>
 
     <nav class="container mx-auto px-2 mt-2">
@@ -87,7 +85,7 @@
             <a href="https://hethonghoantienve.github.io/hethonghoantienve/" target="_blank" class="nav-item">Yêu cầu hoàn vé</a>
             <div onclick="showTab('promo')" class="nav-item" id="btn-promo">🔥 Săn vé giá rẻ</div>
             <div onclick="showTab('rules')" class="nav-item" id="btn-rules">Quy định hãng</div>
-            <div onclick="showTab('contact')" class="nav-item border-none" id="btn-contact">Liên hệ 24/7</div>
+            <div onclick="showTab('contact')" class="nav-item border-none" id="btn-contact">Liên hệ Fanpage</div>
         </div>
     </nav>
 
@@ -98,7 +96,6 @@
         </section>
         <section class="py-6 md:py-10 px-2 md:px-4">
             <div class="container mx-auto bg-white p-4 md:p-8 rounded-2xl shadow-2xl max-w-6xl border-t-8 border-orange-500">
-                
                 <div class="flex gap-6 mb-6">
                     <label class="trip-type-label">
                         <input type="radio" name="tripType" value="one-way" onclick="toggleReturnDate(false)"> Một chiều
@@ -107,17 +104,14 @@
                         <input type="radio" name="tripType" value="round-trip" checked onclick="toggleReturnDate(true)"> Khứ hồi
                     </label>
                 </div>
-
                 <div class="grid grid-cols-1 md:grid-cols-6 gap-4">
                     <div class="md:col-span-1"><label class="text-[10px] font-bold text-gray-400 uppercase">Điểm đi</label><input id="from" readonly onclick="openM('from')" value="Hà Nội (HAN)" class="w-full border p-3 rounded-lg font-bold bg-gray-50 cursor-pointer outline-none text-sm"></div>
                     <div class="md:col-span-1"><label class="text-[10px] font-bold text-gray-400 uppercase">Điểm đến</label><input id="to" readonly onclick="openM('to')" value="Hồ Chí Minh (SGN)" class="w-full border p-3 rounded-lg font-bold bg-gray-50 cursor-pointer outline-none text-sm"></div>
                     <div class="md:col-span-1"><label class="text-[10px] font-bold text-gray-400 uppercase">Ngày đi</label><input type="date" id="dDate" class="w-full border p-3 rounded-lg font-bold outline-none text-sm"></div>
-                    
                     <div class="md:col-span-1" id="return-date-box">
                         <label class="text-[10px] font-bold text-gray-400 uppercase">Ngày về</label>
                         <input type="date" id="rDate" class="w-full border p-3 rounded-lg font-bold outline-none text-sm">
                     </div>
-
                     <div class="md:col-span-2 grid grid-cols-3 gap-2">
                         <div><label class="text-[9px] font-bold text-gray-400 uppercase">Ng.Lớn</label><select id="adult" class="w-full border p-3 rounded-lg font-bold outline-none text-sm"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option></select></div>
                         <div><label class="text-[9px] font-bold text-gray-400 uppercase">Trẻ em</label><select id="child" class="w-full border p-3 rounded-lg font-bold outline-none text-sm"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option></select></div>
@@ -128,7 +122,7 @@
             </div>
         </section>
         <div class="container mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
-            <div class="bg-white p-6 rounded-2xl shadow border-l-8 border-blue-900 text-base"><h3 class="text-blue-900 font-black uppercase mb-3 border-b pb-2 italic">Hoàn tiền vé 24/7</h3><p class="text-gray-600">Xử lý nhanh mọi thủ tục hoàn đổi nhanh nhất.</p></div>
+            <div class="bg-white p-6 rounded-2xl shadow border-l-8 border-blue-900 text-base"><h3 class="text-blue-900 font-black uppercase mb-3 border-b pb-2 italic">Hoàn tiền vé 24/7</h3><p class="text-gray-600">Xử lý nhanh mọi thủ tục hoàn đổi qua Fanpage nhanh nhất.</p></div>
             <div class="bg-white p-6 rounded-2xl shadow border-l-8 border-orange-500 text-base"><h3 class="text-blue-900 font-black uppercase mb-3 border-b pb-2 italic">Giá vé đại lý</h3><p class="text-gray-600">Hệ thống quét giá trực tiếp từ tất cả các hãng bay.</p></div>
         </div>
     </div>
@@ -163,9 +157,9 @@
         <div class="bg-white rounded-3xl shadow-2xl overflow-hidden max-w-5xl mx-auto border border-slate-100 text-gray-700">
             <div class="bg-blue-900 p-8 text-white text-center font-black uppercase italic tracking-tighter"><h2 class="text-2xl md:text-4xl">💎 Đừng Để Hành Trình Chỉ Là Dự Định</h2></div>
             <div class="p-8 space-y-8 leading-relaxed">
-                <p>Săn vé rẻ không phải cuộc chiến đơn độc, hãy để chúng tôi đồng hành giúp bạn đơn giản hóa mọi thứ, tránh rủi ro sai sót tên tuổi hay lịch trình.</p>
+                <p>Săn vé rẻ không phải cuộc chiến đơn độc, hãy để chúng tôi đồng hành giúp bạn đơn giản hóa mọi thứ qua hệ thống hỗ trợ trực tuyến.</p>
                 <div class="bg-slate-50 p-8 rounded-3xl border-2 border-blue-900 text-center shadow-inner">
-                    <h3 class="text-2xl font-black text-blue-900 mb-4 uppercase">Hotline hỗ trợ: 0328.28.28.28</h3>
+                    <h3 class="text-2xl font-black text-blue-900 mb-4 uppercase">Liên hệ hỗ trợ Fanpage CSKH</h3>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 font-bold text-blue-800 text-sm">
                         <p>✅ Hành trình tối ưu nhất</p><p>✅ Hỗ trợ 24/7 siêu tốc</p><p>✅ Deal độc quyền 35-50%</p>
                     </div>
@@ -177,7 +171,10 @@
 
     <footer class="footer-dark mt-20">
         <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
-            <div class="bg-white text-blue-900 rounded-2xl p-6 text-center shadow-2xl max-w-xs"><p class="text-gray-400 font-bold text-[10px] mb-1 uppercase">Hotline toàn quốc 24/7</p><p class="text-3xl font-black text-red-600">0328282828</p></div>
+            <div class="bg-white text-blue-900 rounded-2xl p-6 text-center shadow-2xl max-w-xs uppercase">
+                <p class="text-gray-400 font-bold text-[10px] mb-1 uppercase">Hỗ trợ trực tuyến 24/7</p>
+                <p class="text-xl font-black text-blue-600 italic">Liên hệ Fanpage</p>
+            </div>
             <div class="text-center md:text-right uppercase text-[11px] opacity-70 tracking-widest leading-loose font-bold">
                 <p class="text-lg font-black text-orange-400 mb-2">REFUNDVEMAYBAY247.COM</p>
                 <p>Hệ thống đại lý vé máy bay cấp 1 toàn quốc<br>HN: 11 Bình Minh | GL: 247 Trần Phú | HCM: 153 Lê Hồng Phong<br>© 2026 Bản quyền thuộc về refundvemaybay247.com</p>
@@ -216,18 +213,13 @@
             window.scrollTo(0,0);
         }
 
-        // HÀM ẨN/HIỆN NGÀY VỀ
         function toggleReturnDate(show) {
             const box = document.getElementById('return-date-box');
             if(show) {
-                box.style.visibility = 'visible';
-                box.style.opacity = '1';
-                box.style.pointerEvents = 'auto';
+                box.style.visibility = 'visible'; box.style.opacity = '1'; box.style.pointerEvents = 'auto';
             } else {
-                box.style.visibility = 'hidden';
-                box.style.opacity = '0';
-                box.style.pointerEvents = 'none';
-                document.getElementById('rDate').value = ''; // Xóa ngày về nếu là 1 chiều
+                box.style.visibility = 'hidden'; box.style.opacity = '0'; box.style.pointerEvents = 'none';
+                document.getElementById('rDate').value = '';
             }
         }
 
@@ -241,9 +233,7 @@
             
             const rt = `${f} ↔ ${t}`; 
             let dt = `Đi: ${dd}`;
-            if(tripType === 'round-trip' && rd) {
-                dt += ` | Về: ${rd}`;
-            }
+            if(tripType === 'round-trip' && rd) { dt += ` | Về: ${rd}`; }
 
             document.getElementById('load-route').innerText = rt; 
             document.getElementById('load-date').innerText = dt; 
